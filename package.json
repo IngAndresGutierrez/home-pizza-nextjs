@@ -2,12 +2,32 @@
   "name": "home-pizza-nextjs",
   "version": "0.1.0",
   "private": true,
+  "description": "The best pizza",
+  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/IngAndresGutierrez/home-pizza-nextjs/issues",
+    "email": "g.gutierrez.j.andres@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IngAndresGutierrez/home-pizza-nextjs.git"
+  },
+  "author": {
+    "name": "Jaime Andres Gomez Gutierrez",
+    "email": "g.gutierrez.j.andres@gmail.com",
+    "url": "https://co.linkedin.com/in/jaime-andr%C3%A9s-g%C3%B3mez-guti%C3%A9rrez-78807b192"
+  },
+  "homepage": "https://github.com/IngAndresGutierrez/home-pizza-nextjs.git/#readme",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.10.0",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1"
