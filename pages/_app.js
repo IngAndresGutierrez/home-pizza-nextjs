@@ -11,6 +11,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 /* import internal modules */
 import { useStore } from '../redux/store'
 import theme from '../components/common/Theme'
+import Loading from '../components/common/Loading'
 
 const MyApp = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState)
@@ -26,7 +27,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={<h2>Loading...</h2>} persistor={persistor}>
+      <PersistGate loading={<Loading />} persistor={persistor}>
         <Fragment>
           <Head>
             <title>Home Pizza | La mejor pizza de la región</title>
