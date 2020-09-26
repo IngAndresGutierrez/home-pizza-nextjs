@@ -1,8 +1,8 @@
 /* import internal modules */
-import CartComponent from '../components/cart/Cart/Cart'
+import ShoppingCart from '../components/cart/ShoppingCart'
 
-const CartPage = () => {
-  return <CartComponent />
+const ShoppingCartPage = () => {
+  return <ShoppingCart />
 }
 
-export default CartPage
+export default ShoppingCartPage

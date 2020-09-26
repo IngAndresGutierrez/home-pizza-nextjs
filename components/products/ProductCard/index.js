@@ -14,7 +14,7 @@ import {
 import useStyles from './styles'
 import { setAddCartItem } from '../../../redux/actions/cart'
 
-const ProductCardComponent = ({ product, isWithoutAddButton }) => {
+const ProductCardComponent = ({ product }) => {
   const classes = useStyles()
   const dispatch = useDispatch()
 
@@ -50,15 +50,13 @@ const ProductCardComponent = ({ product, isWithoutAddButton }) => {
         >
           <Visibility />
         </IconButton>
-        {!isWithoutAddButton && (
-          <IconButton
-            aria-label="Agregar al carrito de compras"
-            color="primary"
-            onClick={addToItemsCartList}
-          >
-            <AddShoppingCart />
-          </IconButton>
-        )}
+        <IconButton
+          aria-label="Agregar al carrito de compras"
+          color="primary"
+          onClick={addToItemsCartList}
+        >
+          <AddShoppingCart />
+        </IconButton>
       </CardActions>
     </Card>
   )

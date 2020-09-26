@@ -6,15 +6,12 @@ import useStyles from './styles'
 import ProductCard from '../ProductCard'
 import productsListFake from '../../../constants/products'
 
-const ProductsCardList = ({ productsListAggregates, isWithoutAddButton }) => {
+const ProductsCardList = () => {
   const classes = useStyles()
-  const productsList = productsListAggregates
-    ? productsListAggregates
-    : productsListFake
 
-  const renderProductsList = productsList?.map((item, index) => (
-    <Grid item key={index} xs={12} sm={6} md={4}>
-      <ProductCard product={item} isWithoutAddButton={isWithoutAddButton} />
+  const renderProductsList = productsListFake?.map((item) => (
+    <Grid item key={item.id} xs={12} sm={6} md={4}>
+      <ProductCard product={item} />
     </Grid>
   ))
 
