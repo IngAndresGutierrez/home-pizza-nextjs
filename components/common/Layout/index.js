@@ -1,3 +1,4 @@
+/* import internal modules */
 import Footer from '../Footer'
 import Header from '../Header'
 

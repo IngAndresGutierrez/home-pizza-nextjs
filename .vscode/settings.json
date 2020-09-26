@@ -1,4 +1,5 @@
 {
+  "eslint.lintTask.enable": true,
   "workbench.colorCustomizations": {
     "activityBar.background": "#d04649",
     "activityBar.foreground": "#e7e7e7",
@@ -12,6 +13,6 @@
     "statusBar.background": "#b52e31",
     "statusBarItem.hoverBackground": "#d04649",
     "statusBar.foreground": "#e7e7e7"
-},
+  },
   "peacock.color": "#b52e31"
 }

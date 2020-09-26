@@ -1,6 +1,9 @@
+/* import external modules */
 import { Typography } from '@material-ui/core'
-import Copyright from '../Copyright'
+
+/* import internal modules */
 import useStyles from './styles'
+import Copyright from '../Copyright'
 
 const Footer = () => {
   const classes = useStyles()

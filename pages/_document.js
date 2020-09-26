@@ -1,10 +1,9 @@
 /* import external modules */
-import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/core/styles'
-import React from 'react'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 /* import internal modules */
-import theme from '../components/Theme'
+import theme from '../components/common/Theme'
 
 export default class MyDocument extends Document {
   render() {

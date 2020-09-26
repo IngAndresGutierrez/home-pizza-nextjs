@@ -3,14 +3,14 @@ import Head from 'next/head'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { persistStore } from 'redux-persist'
-import React, { Fragment, useEffect } from 'react'
+import { Fragment, useEffect } from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/core/styles'
 import { PersistGate } from 'redux-persist/integration/react'
 
 /* import internal modules */
-import theme from '../components/Theme'
 import { useStore } from '../redux/store'
+import theme from '../components/common/Theme'
 
 const MyApp = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState)
