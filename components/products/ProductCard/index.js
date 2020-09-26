@@ -1,4 +1,5 @@
 /* import external modules */
+import { useDispatch } from 'react-redux'
 import { Visibility, AddShoppingCart } from '@material-ui/icons'
 import {
   Card,
@@ -11,19 +12,14 @@ import {
 
 /* import internal modules */
 import useStyles from './styles'
+import { setAddCartItem } from '../../../redux/actions/cart'
 
-const CardComponent = () => {
+const ProductCardComponent = ({ product, isWithoutAddButton }) => {
   const classes = useStyles()
+  const dispatch = useDispatch()
 
   const addToItemsCartList = () => {
-    const baseUrlWhatsappApi =
-      'https://wa.me/573128454878?text=Estoy%20interesado%20en%20%20la%20mejor%20%20pizza'
-
-    window.open(
-      baseUrlWhatsappApi,
-      'Home Pizza',
-      'toolbar=yes,scrollbars=yes,resizable=yes,top=150,left=300,height=500,width=700,modal=yes,alwaysRaised=yes'
-    )
+    dispatch(setAddCartItem(product))
   }
 
   const showInfo = () => {
@@ -54,16 +50,18 @@ const CardComponent = () => {
         >
           <Visibility />
         </IconButton>
-        <IconButton
-          aria-label="Agregar al carrito de compras"
-          color="primary"
-          onClick={addToItemsCartList}
-        >
-          <AddShoppingCart />
-        </IconButton>
+        {!isWithoutAddButton && (
+          <IconButton
+            aria-label="Agregar al carrito de compras"
+            color="primary"
+            onClick={addToItemsCartList}
+          >
+            <AddShoppingCart />
+          </IconButton>
+        )}
       </CardActions>
     </Card>
   )
 }
 
-export default CardComponent
+export default ProductCardComponent

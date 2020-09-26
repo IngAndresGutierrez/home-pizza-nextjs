@@ -6,7 +6,7 @@ import Cover from '../components/landing/Cover'
 import Layout from '../components/common/Layout'
 import ProductsCardList from '../components/products/ProductsCardList'
 
-const Landing = () => {
+const LandingPage = () => {
   return (
     <Fragment>
       <Layout>
@@ -19,4 +19,4 @@ const Landing = () => {
   )
 }
 
-export default Landing
+export default LandingPage

@@ -11,7 +11,7 @@ let store
 const persistConfig = {
   key: 'root_home_pizza',
   storage,
-  whitelist: [], // place to select which state you want to persist
+  whitelist: ['cart'], // place to select which state you want to persist
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

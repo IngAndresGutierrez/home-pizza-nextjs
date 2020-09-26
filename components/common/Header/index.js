@@ -1,5 +1,7 @@
 /* import external modules */
-import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
 import { AccountCircle, ShoppingCart } from '@material-ui/icons'
 import {
   AppBar,
@@ -8,6 +10,7 @@ import {
   Typography,
   Menu,
   MenuItem,
+  Badge,
 } from '@material-ui/core'
 
 /* import internal modules */
@@ -15,11 +18,22 @@ import useStyles from './styles'
 
 const Header = () => {
   const classes = useStyles()
+  const router = useRouter()
   const [anchorEl, setAnchorEl] = useState(null)
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null)
-
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
+  const itemsCartList = useSelector((state) => state.cart.itemsCartList)
+
+  useEffect(() => {
+    // const baseUrlWhatsappApi =
+    //   'https://wa.me/573128454878?text=Estoy%20interesado%20en%20%20la%20mejor%20%20pizza'
+    // window.open(
+    //   baseUrlWhatsappApi,
+    //   'Home Pizza',
+    //   'toolbar=yes,scrollbars=yes,resizable=yes,top=150,left=300,height=500,width=700,modal=yes,alwaysRaised=yes'
+    // )
+  }, [itemsCartList])
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget)
@@ -36,6 +50,10 @@ const Header = () => {
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget)
+  }
+
+  const goToCart = () => {
+    router.push('/carrito')
   }
 
   const menuId = 'primary-search-account-menu'
@@ -66,10 +84,14 @@ const Header = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          {/* <Badge badgeContent={4} color="secondary"> */}
-          <ShoppingCart />
-          {/* </Badge> */}
+        <IconButton
+          aria-label="show 4 new mails"
+          color="inherit"
+          onClick={goToCart}
+        >
+          <Badge badgeContent={itemsCartList.length} color="secondary">
+            <ShoppingCart />
+          </Badge>
         </IconButton>
         <p>Carrito</p>
       </MenuItem>
@@ -97,7 +119,7 @@ const Header = () => {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           {/* <IconButton
             edge="start"
@@ -125,11 +147,16 @@ const Header = () => {
           </div> */}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="carrito de compras" color="inherit">
-              {/* <Badge badgeContent={4} color="secondary"> */}
-              <ShoppingCart />
-              {/* </Badge> */}
+            <IconButton
+              aria-label="carrito de compras"
+              color="inherit"
+              onClick={goToCart}
+            >
+              <Badge badgeContent={itemsCartList.length} color="secondary">
+                <ShoppingCart />
+              </Badge>
             </IconButton>
+
             {/* <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
@@ -147,10 +174,14 @@ const Header = () => {
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
-            <IconButton aria-label="carrito de compras" color="inherit">
-              {/* <Badge badgeContent={4} color="secondary"> */}
-              <ShoppingCart />
-              {/* </Badge> */}
+            <IconButton
+              aria-label="carrito de compras"
+              color="inherit"
+              onClick={goToCart}
+            >
+              <Badge badgeContent={itemsCartList.length} color="secondary">
+                <ShoppingCart />
+              </Badge>
             </IconButton>
             {/* <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">

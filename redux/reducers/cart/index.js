@@ -8,7 +8,10 @@ const initialState = {
 const Cart = (state = initialState, action) => {
   switch (action.type) {
     case HANDLE_ADD_CART_ITEM:
-      return state
+      return {
+        ...state,
+        itemsCartList: [...state.itemsCartList, action.payload.newCartItem],
+      }
 
     default:
       return state
