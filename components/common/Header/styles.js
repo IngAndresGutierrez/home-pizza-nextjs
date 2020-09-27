@@ -63,6 +63,9 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  titleCursor: {
+    cursor: 'pointer',
+  },
 }))
 
 export default useStyles

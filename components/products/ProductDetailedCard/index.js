@@ -1,19 +1,23 @@
 /* import external modules */
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  Button,
+  Typography,
+} from '@material-ui/core'
 
 /* import internal modules */
 import useStyles from './styles'
 
-const ProductDetailedCard = () => {
+const ProductDetailedCard = ({ product }) => {
   const classes = useStyles()
   const bull = <span className={classes.bullet}>•</span>
 
   return (
     <Card className={classes.root}>
+      <CardHeader></CardHeader>
       <CardContent>
         <Typography
           className={classes.title}

@@ -16,11 +16,13 @@ const ProductsCardList = () => {
   ))
 
   return (
-    <Container className={classes.cardGrid} maxWidth="md">
-      <Grid container spacing={4}>
-        {renderProductsList}
-      </Grid>
-    </Container>
+    <div className={classes.heroContent}>
+      <Container className={classes.cardGrid} maxWidth="md">
+        <Grid container spacing={4}>
+          {renderProductsList}
+        </Grid>
+      </Container>
+    </div>
   )
 }
 

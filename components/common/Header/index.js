@@ -55,6 +55,9 @@ const Header = () => {
   const goToCart = () => {
     router.push('/carrito')
   }
+  const goToLanding = () => {
+    router.push('/')
+  }
 
   const menuId = 'primary-search-account-menu'
   const renderMenu = (
@@ -129,9 +132,17 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton> */}
-          <Typography className={classes.title} variant="h6" noWrap>
+
+          <Typography
+            className={classes.title}
+            variant="h6"
+            noWrap
+            onClick={goToLanding}
+            className={classes.titleCursor}
+          >
             Home Pizza
           </Typography>
+
           {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

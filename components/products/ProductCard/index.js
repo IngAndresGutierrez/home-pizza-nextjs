@@ -13,6 +13,8 @@ import {
 /* import internal modules */
 import useStyles from './styles'
 import { setAddCartItem } from '../../../redux/actions/cart'
+import ModalComponent from '../../common/Modal'
+import ProductDetailedCard from '../ProductDetailedCard'
 
 const ProductCardComponent = ({ product }) => {
   const classes = useStyles()
@@ -20,10 +22,6 @@ const ProductCardComponent = ({ product }) => {
 
   const addToItemsCartList = () => {
     dispatch(setAddCartItem(product))
-  }
-
-  const showInfo = () => {
-    alert('¡Modal!')
   }
 
   return (
@@ -43,13 +41,13 @@ const ProductCardComponent = ({ product }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <IconButton
-          aria-label="Agregar al carrito de compras"
-          color="primary"
-          onClick={showInfo}
-        >
-          <Visibility />
-        </IconButton>
+        <ModalComponent
+          isIconOpenButton={true}
+          iconOpenButton={<Visibility />}
+          colorOpenButton={'primary'}
+          ariaLabelOpenButton={'Agregar al carrito de compras'}
+          contentModal={<ProductDetailedCard />}
+        />
         <IconButton
           aria-label="Agregar al carrito de compras"
           color="primary"

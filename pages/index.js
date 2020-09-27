@@ -8,14 +8,12 @@ import ProductsCardList from '../components/products/ProductsCardList'
 
 const LandingPage = () => {
   return (
-    <Fragment>
-      <Layout>
-        <main>
-          <Cover />
-          <ProductsCardList />
-        </main>
-      </Layout>
-    </Fragment>
+    <Layout>
+      <main>
+        <Cover />
+        <ProductsCardList />
+      </main>
+    </Layout>
   )
 }
 
