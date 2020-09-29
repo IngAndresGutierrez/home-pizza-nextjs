@@ -1,7 +1,7 @@
 /* import external modules */
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
 import { AccountCircle, ShoppingCart } from '@material-ui/icons'
 import {
   AppBar,
@@ -24,16 +24,6 @@ const Header = () => {
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
   const itemsCartList = useSelector((state) => state.cart.itemsCartList)
-
-  useEffect(() => {
-    // const baseUrlWhatsappApi =
-    //   'https://wa.me/573128454878?text=Estoy%20interesado%20en%20%20la%20mejor%20%20pizza'
-    // window.open(
-    //   baseUrlWhatsappApi,
-    //   'Home Pizza',
-    //   'toolbar=yes,scrollbars=yes,resizable=yes,top=150,left=300,height=500,width=700,modal=yes,alwaysRaised=yes'
-    // )
-  }, [itemsCartList])
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget)

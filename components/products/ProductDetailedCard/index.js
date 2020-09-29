@@ -7,25 +7,20 @@ import {
   Button,
   Typography,
 } from '@material-ui/core'
+import DemoCarousel from '../../common/Carousel'
 
 /* import internal modules */
 import useStyles from './styles'
 
-const ProductDetailedCard = ({ product }) => {
+const ProductDetailedCard = ({ product, isBoxShadowEnable }) => {
   const classes = useStyles()
   const bull = <span className={classes.bullet}>•</span>
 
   return (
     <Card className={classes.root}>
-      <CardHeader></CardHeader>
+      <CardHeader title={product.title} subheader="September 14, 2016" />
       <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Word of the Day
-        </Typography>
+        {/* <DemoCarousel /> */}
         <Typography variant="h5" component="h2">
           be{bull}nev{bull}o{bull}lent
         </Typography>

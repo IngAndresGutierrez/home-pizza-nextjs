@@ -3,7 +3,7 @@ import { CircularProgress, Grid } from '@material-ui/core'
 
 const Loading = () => {
   return (
-    <Grid container spacing={2} justify="center">
+    <Grid container direction="row" justify="center" alignItems="center">
       <CircularProgress color="primary" />
     </Grid>
   )

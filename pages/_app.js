@@ -1,4 +1,5 @@
 /* import external modules */
+import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import Head from 'next/head'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'

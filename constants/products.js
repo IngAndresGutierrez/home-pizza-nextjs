@@ -1,7 +1,7 @@
 const cards = [
   {
     id: 1,
-    name: 'Pizza 1',
+    title: 'Pizza 1',
     description: 'This is pizza 1',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
     price: 100000,

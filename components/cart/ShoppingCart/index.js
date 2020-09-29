@@ -1,4 +1,4 @@
-/* import internal modules */
+/* import external modules */
 import { useSelector } from 'react-redux'
 
 /* import internal modules */
