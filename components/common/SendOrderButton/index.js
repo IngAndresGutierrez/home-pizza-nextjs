@@ -1,16 +1,37 @@
 /* import external modules */
 import { Send } from '@material-ui/icons'
-import { Button, Grid, IconButton } from '@material-ui/core'
+import { Button, Grid } from '@material-ui/core'
 
 /* import internal modules */
 import useStyles from './styles'
+import { numberToCurrencyFormat } from '../../../utils/helpers'
 
-const SendOrderButton = () => {
+const SendOrderButton = ({ itemsCartList, totalPriceCart }) => {
   const classes = useStyles()
 
+  const buildTextOrderToSend = () => {
+    const aditionaltextOrder =
+      'Hola, me gustaria comer las verdaderas pizzas%3A%0A%0A'
+    const separatorText = '%20-%20'
+    const jumpLine = '%0A'
+    let aditionaltextOrderFormat = aditionaltextOrder.replace(' ', '%20')
+
+    itemsCartList.forEach((item) => {
+      const currencyPrice = numberToCurrencyFormat(item.price)
+      aditionaltextOrderFormat += `${item.title}${separatorText}${currencyPrice}${jumpLine}`
+    })
+
+    aditionaltextOrderFormat += `${jumpLine}Precio%20Total%3A%20%20${numberToCurrencyFormat(
+      totalPriceCart
+    )}${jumpLine}`
+
+    return aditionaltextOrderFormat
+  }
+
   const sendOrderFunction = () => {
-    const baseUrlWhatsappApi =
-      'https://wa.me/573128454878?text=Estoy%20interesado%20en%20%20la%20mejor%20%20pizza'
+    const pizzeriaPhone = '573106622828'
+    const textToSend = buildTextOrderToSend()
+    const baseUrlWhatsappApi = `https://wa.me/${pizzeriaPhone}?text=${textToSend}`
     window.open(
       baseUrlWhatsappApi,
       'Home Pizza',
@@ -19,18 +40,17 @@ const SendOrderButton = () => {
   }
 
   return (
-    <Grid container direction="row" justify="center" alignItems="center">
-      <Button
-        aria-label="Hacer Pedido"
-        variant="contained"
-        color="primary"
-        className={classes.button}
-        endIcon={<Send />}
-        onClick={sendOrderFunction}
-      >
-        Hacer Pedido
-      </Button>
-    </Grid>
+    <Button
+      size="large"
+      color="primary"
+      endIcon={<Send />}
+      variant="contained"
+      aria-label="Hacer Pedido"
+      className={classes.button}
+      onClick={sendOrderFunction}
+    >
+      Hacer Pedido
+    </Button>
   )
 }
 

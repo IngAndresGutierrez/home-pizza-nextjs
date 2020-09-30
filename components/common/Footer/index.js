@@ -18,7 +18,7 @@ const Footer = () => {
         color="textSecondary"
         component="p"
       >
-        The best pizza
+        La verdadera pizza
       </Typography>
       <Copyright />
     </footer>

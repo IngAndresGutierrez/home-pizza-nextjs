@@ -1,6 +1,6 @@
 /* import external modules */
-import { useState } from 'react'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { AccountCircle, ShoppingCart } from '@material-ui/icons'
 import {
@@ -123,7 +123,7 @@ const Header = () => {
             <MenuIcon />
           </IconButton> */}
 
-          <Typography
+          {/* <Typography
             className={classes.title}
             variant="h6"
             noWrap
@@ -131,7 +131,14 @@ const Header = () => {
             className={classes.titleCursor}
           >
             Home Pizza
-          </Typography>
+          </Typography> */}
+          <img
+            alt="Home Pizza Logo"
+            src="./home-pizza-logo.jpeg"
+            onClick={goToLanding}
+            className={classes.titleCursor}
+            height="70"
+          />
 
           {/* <div className={classes.search}>
             <div className={classes.searchIcon}>

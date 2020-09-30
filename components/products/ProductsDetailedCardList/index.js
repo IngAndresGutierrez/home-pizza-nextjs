@@ -10,7 +10,7 @@ const ProductsDetailedCardList = ({ productsListAggregates }) => {
 
   const renderProductsDetailedCardList = productsListAggregates?.map(
     (item, index) => (
-      <Grid item key={index} xs={12} sm={12} md={12}>
+      <Grid item key={index} xs={12} sm={6} md={4}>
         <ProductDetailedCard product={item} />
       </Grid>
     )

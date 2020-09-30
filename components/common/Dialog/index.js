@@ -58,6 +58,7 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions)
 
 const CustomizedDialogs = ({
+  titleDialog,
   contentDialog,
   isIconOpenButton,
   iconOpenButton,
@@ -90,7 +91,7 @@ const CustomizedDialogs = ({
         open={open}
       >
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Modal title
+          {titleDialog}
         </DialogTitle>
         <DialogContent dividers>{contentDialog}</DialogContent>
         <DialogActions>

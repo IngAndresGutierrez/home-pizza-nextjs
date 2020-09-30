@@ -1,15 +1,13 @@
 /* import internal modules */
 import Layout from '../components/common/Layout'
 import TitleComponent from '../components/common/Title'
-import ShoppingCart from '../components/cart/ShoppingCart'
-import ShoppingCartSummary from '../components/cart/ShoppingCartSummary'
+import CartContainer from '../components/cart/CartContainer'
 
 const ShoppingCartPage = () => {
   return (
     <Layout>
       <TitleComponent title={'Mi Pedido'} variantProp={'h2'} />
-      <ShoppingCart />
-      <ShoppingCartSummary />
+      <CartContainer />
     </Layout>
   )
 }

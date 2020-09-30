@@ -1,3 +1,4 @@
+/* import external modules */
 import React, { Component } from 'react'
 import { Container } from '@material-ui/core'
 import { Carousel } from 'react-responsive-carousel'
