@@ -24,6 +24,7 @@ const Header = () => {
   const isMenuOpen = Boolean(anchorEl)
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
   const itemsCartList = useSelector((state) => state.cart.itemsCartList)
+  const totalItemsAdded = useSelector((state) => state.cart.totalItemsAdded)
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget)
@@ -82,7 +83,7 @@ const Header = () => {
           color="inherit"
           onClick={goToCart}
         >
-          <Badge badgeContent={itemsCartList.length} color="secondary">
+          <Badge badgeContent={totalItemsAdded} color="secondary">
             <ShoppingCart />
           </Badge>
         </IconButton>
@@ -160,7 +161,7 @@ const Header = () => {
               color="inherit"
               onClick={goToCart}
             >
-              <Badge badgeContent={itemsCartList.length} color="secondary">
+              <Badge badgeContent={totalItemsAdded} color="secondary">
                 <ShoppingCart />
               </Badge>
             </IconButton>
@@ -187,7 +188,7 @@ const Header = () => {
               color="inherit"
               onClick={goToCart}
             >
-              <Badge badgeContent={itemsCartList.length} color="secondary">
+              <Badge badgeContent={totalItemsAdded} color="secondary">
                 <ShoppingCart />
               </Badge>
             </IconButton>

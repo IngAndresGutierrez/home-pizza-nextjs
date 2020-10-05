@@ -4,7 +4,8 @@ const cards = [
     title: 'Pizza 1',
     description: 'This is pizza 1',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 14000,
+    price: 34000,
+    badge: 1,
     coverImage: './images-products/pizza1.jpg',
     images: [
       './images-products/pizza1.jpg',
@@ -17,7 +18,8 @@ const cards = [
     title: 'Pizza 2',
     description: 'This is pizza 2',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 14000,
+    price: 34000,
+    badge: 1,
     coverImage: './images-products/pizza2.jpg',
     images: [
       './images-products/pizza1.jpg',
@@ -30,7 +32,8 @@ const cards = [
     title: 'Pizza 3',
     description: 'This is pizza 3',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 14000,
+    price: 34000,
+    badge: 1,
     coverImage: './images-products/pizza3.jpg',
     images: [
       './images-products/pizza1.jpg',
@@ -43,7 +46,8 @@ const cards = [
     title: 'Pizza 4',
     description: 'This is pizza 4',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 14000,
+    price: 34000,
+    badge: 1,
     coverImage: './images-products/pizza4.jpg',
     images: [
       './images-products/pizza1.jpg',
@@ -56,7 +60,8 @@ const cards = [
     title: 'Pizza 5',
     description: 'This is pizza 5',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 14000,
+    price: 34000,
+    badge: 1,
     coverImage: './images-products/pizza5.jpg',
     images: [
       './images-products/pizza1.jpg',
@@ -69,7 +74,8 @@ const cards = [
     title: 'Pizza 6',
     description: 'This is pizza 6',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 14000,
+    price: 34000,
+    badge: 1,
     coverImage: './images-products/pizza6.jpg',
     images: [
       './images-products/pizza1.jpg',
@@ -82,7 +88,8 @@ const cards = [
     title: 'Pizza 7',
     description: 'This is pizza 7',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 14000,
+    price: 34000,
+    badge: 1,
     coverImage: './images-products/pizza7.jpg',
     images: [
       './images-products/pizza1.jpg',
@@ -95,7 +102,8 @@ const cards = [
     title: 'Pizza 8',
     description: 'This is pizza 8',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 14000,
+    price: 34000,
+    badge: 1,
     coverImage: './images-products/pizza8.jpg',
     images: [
       './images-products/pizza1.jpg',
@@ -108,7 +116,8 @@ const cards = [
     title: 'Pizza 9',
     description: 'This is pizza 9',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 14000,
+    price: 34000,
+    badge: 1,
     coverImage: './images-products/pizza9.jpg',
     images: [
       './images-products/pizza1.jpg',

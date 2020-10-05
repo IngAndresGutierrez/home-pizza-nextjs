@@ -18,7 +18,7 @@ const SendOrderButton = ({ itemsCartList, totalPriceCart }) => {
 
     itemsCartList.forEach((item) => {
       const currencyPrice = numberToCurrencyFormat(item.price)
-      aditionaltextOrderFormat += `${item.title}${separatorText}${currencyPrice}${jumpLine}`
+      aditionaltextOrderFormat += `${item.title}${separatorText}${currencyPrice} - Cant. (${item.badge})${jumpLine}`
     })
 
     aditionaltextOrderFormat += `${jumpLine}Precio%20Total%3A%20%20${numberToCurrencyFormat(

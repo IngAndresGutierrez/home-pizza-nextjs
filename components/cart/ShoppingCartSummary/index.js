@@ -1,6 +1,7 @@
 /* import external modules */
-import { Grid } from '@material-ui/core'
+import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { Badge, Grid } from '@material-ui/core'
 
 /* import internal modules */
 import useStyles from './styles'
@@ -14,11 +15,14 @@ const ShoppingCartSummary = () => {
 
   const renderSummaryItemsCart = itemsCartList.map((item, index) => (
     <Grid item key={index} xs={12} sm={12} md={12}>
-      <p key={index}>
-        {item.title + ' - ' + numberToCurrencyFormat(item.price)}
-      </p>
+      <Badge badgeContent={item.badge} color="secondary">
+        <p key={index}>
+          {item.title + ' - ' + numberToCurrencyFormat(item.price)}
+        </p>
+      </Badge>
     </Grid>
   ))
+
   const renderTotalPriceFormat = (
     <Grid item xs={12} sm={12} md={12}>
       <h3>{' Precio Total: ' + numberToCurrencyFormat(totalPriceCart)}</h3>
