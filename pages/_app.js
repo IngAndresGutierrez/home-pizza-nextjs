@@ -31,7 +31,7 @@ const MyApp = ({ Component, pageProps }) => {
       <PersistGate loading={<Loading />} persistor={persistor}>
         <Fragment>
           <Head>
-            <title>Home Pizza | La mejor pizza de la región</title>
+            <title>Home Pizza | La verdadera pizza</title>
             <meta
               name="viewport"
               content="minimum-scale=1, initial-scale=1, width=device-width"

@@ -15,6 +15,8 @@ import {
 
 /* import internal modules */
 import useStyles from './styles'
+import ControlledAccordion from '../Accordion'
+import ShoppingCartSummary from '../../cart/ShoppingCartSummary'
 
 const Header = () => {
   const classes = useStyles()
@@ -61,8 +63,8 @@ const Header = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      {/* <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem> */}
     </Menu>
   )
 
@@ -77,7 +79,7 @@ const Header = () => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
+      {/* <MenuItem>
         <IconButton
           aria-label="show 4 new mails"
           color="inherit"
@@ -88,7 +90,7 @@ const Header = () => {
           </Badge>
         </IconButton>
         <p>Carrito</p>
-      </MenuItem>
+      </MenuItem> */}
       {/* <MenuItem>
         <IconButton aria-label="show 11 new notifications" color="inherit">
           <Badge badgeContent={11} color="secondary">
@@ -97,7 +99,7 @@ const Header = () => {
         </IconButton>
         <p>Notifications</p>
       </MenuItem> */}
-      <MenuItem onClick={handleProfileMenuOpen}>
+      {/* <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
@@ -107,7 +109,7 @@ const Header = () => {
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
-      </MenuItem>
+      </MenuItem> */}
     </Menu>
   )
 
@@ -138,7 +140,7 @@ const Header = () => {
             src="./home-pizza-logo.jpeg"
             onClick={goToLanding}
             className={classes.titleCursor}
-            height="70"
+            height="120"
           />
 
           {/* <div className={classes.search}>
@@ -156,7 +158,11 @@ const Header = () => {
           </div> */}
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton
+            <ControlledAccordion
+              itemsCartList={itemsCartList}
+              cartSummary={<ShoppingCartSummary />}
+            />
+            {/* <IconButton
               aria-label="carrito de compras"
               color="inherit"
               onClick={goToCart}
@@ -164,14 +170,14 @@ const Header = () => {
               <Badge badgeContent={totalItemsAdded} color="secondary">
                 <ShoppingCart />
               </Badge>
-            </IconButton>
+            </IconButton> */}
 
             {/* <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton> */}
-            <IconButton
+            {/* <IconButton
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
@@ -180,10 +186,10 @@ const Header = () => {
               color="inherit"
             >
               <AccountCircle />
-            </IconButton>
+            </IconButton> */}
           </div>
           <div className={classes.sectionMobile}>
-            <IconButton
+            {/* <IconButton
               aria-label="carrito de compras"
               color="inherit"
               onClick={goToCart}
@@ -191,13 +197,18 @@ const Header = () => {
               <Badge badgeContent={totalItemsAdded} color="secondary">
                 <ShoppingCart />
               </Badge>
-            </IconButton>
+            </IconButton> */}
+            <ControlledAccordion
+              itemsCartList={itemsCartList}
+              cartSummary={<ShoppingCartSummary />}
+            />
+
             {/* <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton> */}
-            <IconButton
+            {/* <IconButton
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
@@ -206,7 +217,7 @@ const Header = () => {
               color="inherit"
             >
               <AccountCircle />
-            </IconButton>
+            </IconButton> */}
             {/* <IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}

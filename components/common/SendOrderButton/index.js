@@ -45,11 +45,11 @@ const SendOrderButton = ({ itemsCartList, totalPriceCart }) => {
       color="primary"
       endIcon={<Send />}
       variant="contained"
-      aria-label="Hacer Pedido"
+      aria-label="Realizar Pedido"
       className={classes.button}
       onClick={sendOrderFunction}
     >
-      Hacer Pedido
+      Realizar Pedido
     </Button>
   )
 }

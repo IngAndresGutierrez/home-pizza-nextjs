@@ -9,7 +9,7 @@ const Cover = () => {
 
   return (
     <div className={classes.heroContent}>
-      <Container maxWidth="sm">
+      {/* <Container maxWidth="sm">
         <Typography
           component="h1"
           variant="h2"
@@ -37,7 +37,7 @@ const Cover = () => {
             </Grid>
           </Grid>
         </div>
-      </Container>
+      </Container> */}
     </div>
   )
 }

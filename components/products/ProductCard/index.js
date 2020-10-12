@@ -19,7 +19,10 @@ import {
 } from '../../../redux/actions/cart'
 import DialogComponent from '../../common/Dialog'
 import ProductDetailedCard from '../ProductDetailedCard'
-import { numberToCurrencyFormat } from '../../../utils/helpers'
+import {
+  numberToCurrencyFormat,
+  getNumberAddedProducts,
+} from '../../../utils/helpers'
 
 const ProductCardComponent = ({ product }) => {
   const classes = useStyles()
@@ -27,12 +30,12 @@ const ProductCardComponent = ({ product }) => {
   const itemsCartList = useSelector((state) => state.cart.itemsCartList)
 
   const addToItemsCartList = () => {
-    if (itemsCartList.length < 15) {
+    if (getNumberAddedProducts(itemsCartList) < 15) {
       dispatch(setAddCartItem(product))
       dispatch(setCaculatePriceCart())
     }
 
-    if (itemsCartList.length >= 15) {
+    if (getNumberAddedProducts(itemsCartList) >= 15) {
       alert('Límite de pizzas alcanzado.')
     }
   }
@@ -58,7 +61,7 @@ const ProductCardComponent = ({ product }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <DialogComponent
+        {/* <DialogComponent
           titleDialog={product.title}
           isIconOpenButton={true}
           iconOpenButton={<Visibility />}
@@ -67,10 +70,10 @@ const ProductCardComponent = ({ product }) => {
           contentDialog={
             <ProductDetailedCard product={product} isBoxShadowEnable={false} />
           }
-        />
+        /> */}
         <IconButton
           aria-label="Agregar al carrito de compras"
-          color="secondary"
+          color="primary"
           onClick={addToItemsCartList}
         >
           <AddShoppingCart />

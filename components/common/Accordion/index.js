@@ -1,10 +1,22 @@
-import React from 'react'
+/* import external modules */
+import React, { useState } from 'react'
+import {
+  Badge,
+  Accordion,
+  Typography,
+  AccordionDetails,
+  AccordionSummary,
+} from '@material-ui/core'
+import { useSelector } from 'react-redux'
+import { withStyles } from '@material-ui/styles'
 import { makeStyles } from '@material-ui/core/styles'
-import Accordion from '@material-ui/core/Accordion'
-import AccordionDetails from '@material-ui/core/AccordionDetails'
-import AccordionSummary from '@material-ui/core/AccordionSummary'
-import Typography from '@material-ui/core/Typography'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+
+/* import internal modules */
+import {
+  getNumberAddedProducts,
+  numberToCurrencyFormat,
+} from '../../../utils/helpers'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,9 +33,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const ControlledAccordion = () => {
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -10,
+    top: 3,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}))(Badge)
+
+const ControlledAccordion = ({ itemsCartList, cartSummary }) => {
   const classes = useStyles()
-  const [expanded, setExpanded] = React.useState(false)
+  const [expanded, setExpanded] = useState(false)
+  const totalPriceCart = useSelector((state) => state.cart.totalPrice)
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false)
@@ -40,17 +62,16 @@ const ControlledAccordion = () => {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography className={classes.heading}>General settings</Typography>
+          <Typography className={classes.heading}>Precio Total</Typography>
           <Typography className={classes.secondaryHeading}>
-            I am an accordion
+            {numberToCurrencyFormat(totalPriceCart)}
           </Typography>
+          <StyledBadge
+            badgeContent={getNumberAddedProducts(itemsCartList)}
+            color="secondary"
+          ></StyledBadge>
         </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
-            Aliquam eget maximus est, id dignissim quam.
-          </Typography>
-        </AccordionDetails>
+        <AccordionDetails>{cartSummary}</AccordionDetails>
       </Accordion>
     </div>
   )

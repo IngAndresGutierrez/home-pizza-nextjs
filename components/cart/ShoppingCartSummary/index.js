@@ -1,12 +1,21 @@
 /* import external modules */
-import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Badge, Grid } from '@material-ui/core'
+import { withStyles } from '@material-ui/styles'
+import { Badge, Grid, Typography } from '@material-ui/core'
 
 /* import internal modules */
 import useStyles from './styles'
 import SendOrderButton from '../../common/SendOrderButton'
 import { numberToCurrencyFormat } from '../../../utils/helpers'
+
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -10,
+    top: 3,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}))(Badge)
 
 const ShoppingCartSummary = () => {
   const classes = useStyles()
@@ -15,17 +24,27 @@ const ShoppingCartSummary = () => {
 
   const renderSummaryItemsCart = itemsCartList.map((item, index) => (
     <Grid item key={index} xs={12} sm={12} md={12}>
-      <Badge badgeContent={item.badge} color="secondary">
-        <p key={index}>
+      <StyledBadge badgeContent={item.badge} color="secondary">
+        <Typography
+          className={classes.secondaryHeading}
+          key={index}
+          component="h6"
+          variant="subtitle1"
+          align="left"
+          color="textPrimary"
+          gutterBottom
+        >
           {item.title + ' - ' + numberToCurrencyFormat(item.price)}
-        </p>
-      </Badge>
+        </Typography>
+      </StyledBadge>
     </Grid>
   ))
 
   const renderTotalPriceFormat = (
     <Grid item xs={12} sm={12} md={12}>
-      <h3>{' Precio Total: ' + numberToCurrencyFormat(totalPriceCart)}</h3>
+      <Typography>
+        {' Precio Total: ' + numberToCurrencyFormat(totalPriceCart)}
+      </Typography>
     </Grid>
   )
 
@@ -41,10 +60,18 @@ const ShoppingCartSummary = () => {
   return (
     <div className={classes.root}>
       <Grid container direction="column">
-        <h2>Resumen del pedido</h2>
+        <Typography
+          component="h2"
+          variant="h6"
+          align="center"
+          color="textPrimary"
+          gutterBottom
+        >
+          Resumen del pedido
+        </Typography>
         {renderSummaryItemsCart}
-        {renderTotalPriceFormat}
-        {renderSendOrderButton}
+        {/* {renderTotalPriceFormat} */}
+        {itemsCartList.length > 0 && renderSendOrderButton}
       </Grid>
     </div>
   )
