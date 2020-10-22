@@ -1,10 +1,17 @@
-const cards = [
+const products = [
   {
     id: 1,
-    title: 'Pizza 1',
+    title: 'Hawaiana',
     description: 'This is pizza 1',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 34000,
+    sizesPrices: [
+      { price: 7900, size: 'Mini' },
+      { price: 27900, size: 'Mediana' },
+      { price: 37900, size: 'Grande' },
+    ],
+    drinks: [{ name: 'Gaseosa Pepsi' }, { name: 'Gaseosa Manzana' }],
+    minPrice: 7900,
+    maxPrice: 37900,
     badge: 1,
     coverImage: './images-products/pizza1.jpg',
     images: [
@@ -15,10 +22,17 @@ const cards = [
   },
   {
     id: 2,
-    title: 'Pizza 2',
+    title: 'Carnes',
     description: 'This is pizza 2',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 34000,
+    sizesPrices: [
+      { price: 7900, size: 'Mini' },
+      { price: 27900, size: 'Mediana' },
+      { price: 37900, size: 'Grande' },
+    ],
+    drinks: [{ name: 'Gaseosa Pepsi' }, { name: 'Gaseosa Manzana' }],
+    minPrice: 7900,
+    maxPrice: 37900,
     badge: 1,
     coverImage: './images-products/pizza2.jpg',
     images: [
@@ -29,10 +43,17 @@ const cards = [
   },
   {
     id: 3,
-    title: 'Pizza 3',
+    title: 'Pollo y Champiñones',
     description: 'This is pizza 3',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 34000,
+    sizesPrices: [
+      { price: 7900, size: 'Mini' },
+      { price: 27900, size: 'Mediana' },
+      { price: 37900, size: 'Grande' },
+    ],
+    drinks: [{ name: 'Gaseosa Pepsi' }, { name: 'Gaseosa Manzana' }],
+    minPrice: 7900,
+    maxPrice: 37900,
     badge: 1,
     coverImage: './images-products/pizza3.jpg',
     images: [
@@ -43,10 +64,17 @@ const cards = [
   },
   {
     id: 4,
-    title: 'Pizza 4',
+    title: 'Pepperoni',
     description: 'This is pizza 4',
     ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 34000,
+    sizesPrices: [
+      { price: 8900, size: 'Mini' },
+      { price: 29900, size: 'Mediana' },
+      { price: 41900, size: 'Grande' },
+    ],
+    drinks: [{ name: 'Gaseosa Pepsi' }, { name: 'Gaseosa Manzana' }],
+    minPrice: 8900,
+    maxPrice: 41900,
     badge: 1,
     coverImage: './images-products/pizza4.jpg',
     images: [
@@ -55,76 +83,6 @@ const cards = [
       './images-products/pizza3.jpg',
     ],
   },
-  {
-    id: 5,
-    title: 'Pizza 5',
-    description: 'This is pizza 5',
-    ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 34000,
-    badge: 1,
-    coverImage: './images-products/pizza5.jpg',
-    images: [
-      './images-products/pizza1.jpg',
-      './images-products/pizza2.jpg',
-      './images-products/pizza3.jpg',
-    ],
-  },
-  {
-    id: 6,
-    title: 'Pizza 6',
-    description: 'This is pizza 6',
-    ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 34000,
-    badge: 1,
-    coverImage: './images-products/pizza6.jpg',
-    images: [
-      './images-products/pizza1.jpg',
-      './images-products/pizza2.jpg',
-      './images-products/pizza3.jpg',
-    ],
-  },
-  {
-    id: 7,
-    title: 'Pizza 7',
-    description: 'This is pizza 7',
-    ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 34000,
-    badge: 1,
-    coverImage: './images-products/pizza7.jpg',
-    images: [
-      './images-products/pizza1.jpg',
-      './images-products/pizza2.jpg',
-      './images-products/pizza3.jpg',
-    ],
-  },
-  {
-    id: 8,
-    title: 'Pizza 8',
-    description: 'This is pizza 8',
-    ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 34000,
-    badge: 1,
-    coverImage: './images-products/pizza8.jpg',
-    images: [
-      './images-products/pizza1.jpg',
-      './images-products/pizza2.jpg',
-      './images-products/pizza3.jpg',
-    ],
-  },
-  {
-    id: 9,
-    title: 'Pizza 9',
-    description: 'This is pizza 9',
-    ingredients: ['Salsa', 'Mozzarella', 'Piña'],
-    price: 34000,
-    badge: 1,
-    coverImage: './images-products/pizza9.jpg',
-    images: [
-      './images-products/pizza1.jpg',
-      './images-products/pizza2.jpg',
-      './images-products/pizza3.jpg',
-    ],
-  },
 ]
 
-export default cards
+export default products

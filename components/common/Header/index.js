@@ -137,10 +137,10 @@ const Header = () => {
           </Typography> */}
           <img
             alt="Home Pizza Logo"
-            src="./home-pizza-logo.jpeg"
+            src="./home-pizza-logo.png"
             onClick={goToLanding}
             className={classes.titleCursor}
-            height="120"
+            //height="120"
           />
 
           {/* <div className={classes.search}>

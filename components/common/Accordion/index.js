@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
+    marginLeft: '10%',
   },
 }))
 
@@ -64,7 +65,7 @@ const ControlledAccordion = ({ itemsCartList, cartSummary }) => {
         >
           <Typography className={classes.heading}>Precio Total</Typography>
           <Typography className={classes.secondaryHeading}>
-            {numberToCurrencyFormat(totalPriceCart)}
+            {numberToCurrencyFormat(totalPriceCart || 0)}
           </Typography>
           <StyledBadge
             badgeContent={getNumberAddedProducts(itemsCartList)}

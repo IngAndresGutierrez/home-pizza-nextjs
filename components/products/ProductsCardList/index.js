@@ -10,7 +10,7 @@ const ProductsCardList = () => {
   const classes = useStyles()
 
   const renderProductsList = productsListFake?.map((item) => (
-    <Grid item key={item.id} xs={12} sm={6} md={4}>
+    <Grid item key={item.id} xs={12} sm={6} md={6}>
       <ProductCard product={item} />
     </Grid>
   ))

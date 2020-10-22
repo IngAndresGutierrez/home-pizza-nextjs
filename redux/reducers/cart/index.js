@@ -1,5 +1,9 @@
 /* import internal modules */
-import { HANDLE_ADD_CART_ITEM, HANDLE_PRICE } from '../../types'
+import {
+  HANDLE_REMOVE_CART_ITEM,
+  HANDLE_ADD_CART_ITEM,
+  HANDLE_PRICE,
+} from '../../types'
 
 const initialState = {
   itemsCartList: [],
@@ -13,15 +17,34 @@ const Cart = (state = initialState, action) => {
       const cartItem = action.payload.newCartItem
       let newItemsCartList = []
 
-      if (!state.itemsCartList.includes(action.payload.newCartItem)) {
+      let flagAdd = state.itemsCartList.findIndex(
+        (x) =>
+          x.id === cartItem.id &&
+          x.parameterization.selectedSize ===
+            cartItem.parameterization.selectedSize &&
+          x.parameterization.selectedPrice ===
+            cartItem.parameterization.selectedPrice &&
+          x.parameterization.selectedDrink ===
+            cartItem.parameterization.selectedDrink
+      )
+
+      if (flagAdd < 0) {
         newItemsCartList = [...state.itemsCartList, action.payload.newCartItem]
       }
 
-      if (state.itemsCartList.includes(cartItem)) {
-        const newItemsList = state.itemsCartList.slice()
+      if (flagAdd >= 0) {
+        const newItemsList = [...state.itemsCartList]
 
         newItemsList.map((item) => {
-          if (item.id === cartItem.id) {
+          if (
+            item.id === cartItem.id &&
+            item.parameterization.selectedSize ===
+              cartItem.parameterization.selectedSize &&
+            item.parameterization.selectedPrice ===
+              cartItem.parameterization.selectedPrice &&
+            item.parameterization.selectedDrink ===
+              cartItem.parameterization.selectedDrink
+          ) {
             item.badge = item.badge + 1
             return item
           }
@@ -35,11 +58,23 @@ const Cart = (state = initialState, action) => {
         totalItemsAdded: state.totalItemsAdded + 1,
       }
 
+    case HANDLE_REMOVE_CART_ITEM:
+      const removeCartItem = action.payload.cartItem
+
+      return {
+        itemsCartList: [
+          ...state.itemsCartList.filter(
+            (item) => item.indexOnCart !== removeCartItem.indexOnCart
+          ),
+        ],
+      }
+
     case HANDLE_PRICE:
       let totalPriceValue = 0
 
       state.itemsCartList.forEach((item) => {
-        totalPriceValue += item.price * item.badge
+        totalPriceValue +=
+          parseInt(item.parameterization.selectedPrice) * item.badge
       })
 
       return {

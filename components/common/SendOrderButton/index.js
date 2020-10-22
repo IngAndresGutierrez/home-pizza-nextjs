@@ -5,6 +5,7 @@ import { Button, Grid } from '@material-ui/core'
 /* import internal modules */
 import useStyles from './styles'
 import { numberToCurrencyFormat } from '../../../utils/helpers'
+import { registerOrderIntoFirebase } from '../../../apis/products'
 
 const SendOrderButton = ({ itemsCartList, totalPriceCart }) => {
   const classes = useStyles()
@@ -17,8 +18,10 @@ const SendOrderButton = ({ itemsCartList, totalPriceCart }) => {
     let aditionaltextOrderFormat = aditionaltextOrder.replace(' ', '%20')
 
     itemsCartList.forEach((item) => {
-      const currencyPrice = numberToCurrencyFormat(item.price)
-      aditionaltextOrderFormat += `${item.title}${separatorText}${currencyPrice} - Cant. (${item.badge})${jumpLine}`
+      const currencyPrice = numberToCurrencyFormat(
+        item.parameterization.selectedPrice
+      )
+      aditionaltextOrderFormat += `${item.title}${separatorText}${item.parameterization.selectedSize}${separatorText}${item.parameterization.selectedDrink}- Cant. (${item.badge})${separatorText}${currencyPrice}${jumpLine}${jumpLine}`
     })
 
     aditionaltextOrderFormat += `${jumpLine}Precio%20Total%3A%20%20${numberToCurrencyFormat(
@@ -32,6 +35,7 @@ const SendOrderButton = ({ itemsCartList, totalPriceCart }) => {
     const pizzeriaPhone = '573106622828'
     const textToSend = buildTextOrderToSend()
     const baseUrlWhatsappApi = `https://wa.me/${pizzeriaPhone}?text=${textToSend}`
+    registerOrderIntoFirebase({ itemsCartList, totalPriceCart })
     window.open(
       baseUrlWhatsappApi,
       'Home Pizza',

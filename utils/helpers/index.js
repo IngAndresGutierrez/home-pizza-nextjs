@@ -1,8 +1,7 @@
 export const numberToCurrencyFormat = (number) => {
-  const numberFormatObject = new Intl.NumberFormat()
-  const numberFormat = numberFormatObject.format(number)
-  const completeFormat = `$${numberFormat}`
-  return completeFormat
+  return `$${number
+    ?.toString()
+    .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}`
 }
 
 export const getNumberAddedProducts = (listProducts) => {
