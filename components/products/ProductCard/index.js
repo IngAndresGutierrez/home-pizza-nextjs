@@ -65,6 +65,7 @@ const ProductCardComponent = ({ product }) => {
       setShowDrink(true)
     } else {
       setShowDrink(false)
+      setSelectedDrink('')
     }
   }
 

@@ -13,7 +13,7 @@ const products = [
     minPrice: 7900,
     maxPrice: 37900,
     badge: 1,
-    coverImage: './images-products/pizza1.jpg',
+    coverImage: './images-products/hawaiana.jpg',
     images: [
       './images-products/pizza1.jpg',
       './images-products/pizza2.jpg',
@@ -34,7 +34,7 @@ const products = [
     minPrice: 7900,
     maxPrice: 37900,
     badge: 1,
-    coverImage: './images-products/pizza2.jpg',
+    coverImage: './images-products/carnes.jpg',
     images: [
       './images-products/pizza1.jpg',
       './images-products/pizza2.jpg',
@@ -55,7 +55,7 @@ const products = [
     minPrice: 7900,
     maxPrice: 37900,
     badge: 1,
-    coverImage: './images-products/pizza3.jpg',
+    coverImage: './images-products/pollo.jpg',
     images: [
       './images-products/pizza1.jpg',
       './images-products/pizza2.jpg',
@@ -76,7 +76,7 @@ const products = [
     minPrice: 8900,
     maxPrice: 41900,
     badge: 1,
-    coverImage: './images-products/pizza4.jpg',
+    coverImage: './images-products/pepperoni.jpg',
     images: [
       './images-products/pizza1.jpg',
       './images-products/pizza2.jpg',
