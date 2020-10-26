@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Open [https://home-pizza-nextjs.ingandresgutierrez.vercel.app](https://home-pizza-nextjs.ingandresgutierrez.vercel.app) for see platform.
 
+### Send orders by whatsapp
+
 First, run the development server:
 
 ```bash
