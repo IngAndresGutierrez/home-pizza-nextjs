@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-Open [https://home-pizza-nextjs.vercel.app/](https://home-pizza-nextjs.vercel.app/) for see platform.
+Open [https://home-pizza-nextjs.ingandresgutierrez.vercel.app](https://home-pizza-nextjs.ingandresgutierrez.vercel.app) for see platform.
 
 First, run the development server:
 
