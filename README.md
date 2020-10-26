@@ -1,10 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Send orders by whatsapp
 
 Open [https://home-pizza-nextjs.ingandresgutierrez.vercel.app](https://home-pizza-nextjs.ingandresgutierrez.vercel.app) for see platform.
 
-### Send orders by whatsapp
+## Getting Started
 
 First, run the development server:
 
