@@ -3,6 +3,7 @@ import {
   HANDLE_REMOVE_CART_ITEM,
   HANDLE_ADD_CART_ITEM,
   HANDLE_PRICE,
+  HANDLE_CLEAR_CART_ITEM,
 } from '../../types'
 
 const initialState = {
@@ -80,6 +81,14 @@ const Cart = (state = initialState, action) => {
       return {
         ...state,
         totalPrice: totalPriceValue,
+      }
+
+    case HANDLE_CLEAR_CART_ITEM:
+      return {
+        ...state,
+        itemsCartList: [],
+        totalPrice: 0,
+        totalItemsAdded: 0,
       }
 
     default:
